@@ -1,5 +1,7 @@
+//This program is very limited in function, due to having only four cases.
+
 function helloWorld (code) {
-  switch(code) {
+  switch(code.toLowerCase()) {
     case 'es':
     alert("Hola, Mundo!");
     break;
@@ -16,4 +18,3 @@ function helloWorld (code) {
     alert("Hello, World");
   }
 }
-//helloWorld()

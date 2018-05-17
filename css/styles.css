@@ -1,0 +1,9 @@
+.navbar_left_title {
+  float: left;
+  height: 50px;
+  color: #777;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 15px 15px;
+  margin: 0 0 0 -15px; /* remove built in p tag margin, -15 px to bring menu flush against left side */
+}

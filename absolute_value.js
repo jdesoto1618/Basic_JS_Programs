@@ -26,3 +26,4 @@ function absVal() {
       return "The absolute value of " + number + " is " + number;
   } // ends number if
 } // ends absVal
+// add this to a static page? button click to run the function, display result using jquery

@@ -3,12 +3,16 @@
   <head>
     <meta name="" content="">
     <meta charset="utf-8">
+    <!-- jQuery 3.3.1 CDN. Note jquery wouldn't run if this script was at the end of the body-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS for bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- link to css file -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- absolute value function script -->
     <script src="js/absolute_value.js"></script>
+    <!-- link to main.js file -->
+    <script src="js/main.js"></script>
     <title>JS Practice Programs</title>
   </head>
   <body>
@@ -28,9 +32,9 @@
             <!-- dropdown menu after left page title, includes separated links -->
             <li class="dropdown">
               <!-- include whitespace after "Dropdown" to separate the caret and the word -->
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#" onclick="absVal()">Absolute Value</a></li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select A Program <span class="caret"></span></a>
+              <ul class="dropdown-menu" id="program_select_dropdown">
+                <li><a href="#">Absolute Value</a></li>
                 <li><a href="#" onclick="compareTwoNumbers(num1, num2)">Which Number is Larger?</a></li>
                 <li><a href="#" onclick="">FizzBuzz</a></li>
                 <li><a href="#" onclick="assignGrade(score)">Letter Grade</a></li>
@@ -40,12 +44,17 @@
               </ul>
             </li>
           </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input id="program_selection_field" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-default">Run Selected Program</button>
+          </form>
         </div><!-- closes .navbar-collapse -->
       </div><!-- closes container div -->
     </nav>
     <h1 class="text-center">Select A Program</h1>
-    <!-- jQuery 3.3.1 CDN -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <h3 id="function_return"></h3>
     <!-- bootstrap js 3.3.7 script -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>

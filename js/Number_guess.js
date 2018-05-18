@@ -3,7 +3,7 @@
 var user_guess;
 var attempts = 1;
 var counter = 7;
-function secret () {
+function secret() {
   //Used +1 at the end of this due to the nature of floor. We want this to reach 100, and it won't without the +1. An alternate way to accomplish this is to do *101.
   var comp_num = Math.floor(Math.random()*100)+1;
   var name = prompt("Type in your name to play!");

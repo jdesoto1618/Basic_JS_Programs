@@ -1,4 +1,4 @@
-function compareTwoNumbers (num1, num2) {
+function compareTwoNumbers(num1, num2) {
   // store parameter values as variables
   var p1 = num1;
   var p2 = num2;

@@ -9,6 +9,7 @@ $(document).ready(function(){
       switch(value) {
         case 'Absolute Value':
         console.log('Running abs value program');
+        $('#program_title').text('Absolute Value');
         break;
 
         case 'Which Number is Larger?':

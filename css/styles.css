@@ -1,3 +1,9 @@
+/* general body styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #BFD3D3;
+}
+
 .navbar_left_title {
   float: left;
   height: 50px;
@@ -6,4 +12,10 @@
   line-height: 20px;
   padding: 15px 15px;
   margin: 0 0 0 -15px; /* remove built in p tag margin, -15 px to bring menu flush against left side */
+}
+
+/* form-control styling */
+.form-control {
+  height: auto; /* set height to auto, 34 was slightly off from its button */
+  border: 1px solid #5bc0de;
 }

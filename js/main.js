@@ -8,32 +8,31 @@ $(document).ready(function(){
       $("#program_selection_field").val(value);
       switch(value) {
         case 'Absolute Value':
-        console.log('Running abs value program');
         $('#program_title').text('Absolute Value');
         break;
 
         case 'Which Number is Larger?':
-        console.log('Running number comparator program');
+        $('#program_title').text('Which Number is Larger?');
         break;
 
         case 'FizzBuzz':
-        console.log('Running FizzBuzz program');
+        $('#program_title').text('FizzBuzz');
         break;
 
         case 'Letter Grade':
-        console.log('Running Letter Grade program');
+        $('#program_title').text('Letter Grade');
         break;
 
         case 'Guess a Number':
-        console.log('Running Guess a Number program');
+        $('#program_title').text('Guess a Number');
         break;
 
         case 'Odd or Even?':
-        console.log('Running Odd or Even? program');
+        $('#program_title').text('Odd or Even?');
         break;
 
         case 'Pluralize Words':
-        console.log('Running Pluralize Words program');
+        $('#program_title').text('Pluralize Words');
         break;
       }
   });

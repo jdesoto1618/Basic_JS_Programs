@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="" content="">
+    <!-- responsive meta tag, sets viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <!-- jQuery 3.3.1 CDN. Note jquery wouldn't run if this script was at the end of the body-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -9,22 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- link to css file -->
     <link rel="stylesheet" href="css/styles.css">
-    <!-- absolute value function script -->
-    <script src="js/absolute_value.js"></script>
-    <!-- bigger number function script -->
-    <script src="js/Bigger_number.js"></script>
-    <!-- fizzbuzz function script -->
-    <!-- <script src="js/FizzBuzz.js"></script> -->
-    <!-- grade function script -->
-    <script src="js/Grade.js"></script>
-    <!-- number guess function script -->
-    <!-- <script src="js/Number_guess.js"></script> -->
-    <!-- odd or even function script -->
-    <script src="js/Odd_even.js"></script>
-    <!-- pluralize function script -->
-    <script src="js/Pluralize.js"></script>
-    <!-- link to main.js file -->
-    <script src="js/main.js"></script>
     <title>JS Practice Programs</title>
     <!-- Roboto font link -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -49,12 +34,12 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Select A Program <span class="caret"></span></a>
               <ul class="dropdown-menu" id="program_select_dropdown">
                 <li><a href="#">Absolute Value</a></li>
-                <li><a href="#" onclick="compareTwoNumbers(num1, num2)">Which Number is Larger?</a></li>
-                <li><a href="#" onclick="">FizzBuzz</a></li>
-                <li><a href="#" onclick="assignGrade(score)">Letter Grade</a></li>
-                <li><a href="#" onclick="secret()">Guess a Number</a></li>
-                <li><a href="#" onclick="oddEven()">Odd or Even?</a></li>
-                <li><a href="#" onclick="pluralizer(num, noun)">Pluralize Words</a></li>
+                <li><a href="#">Which Number is Larger?</a></li>
+                <li><a href="#">FizzBuzz</a></li>
+                <li><a href="#">Letter Grade</a></li>
+                <li><a href="#">Guess a Number</a></li>
+                <li><a href="#">Odd or Even?</a></li>
+                <li><a href="#">Pluralize Words</a></li>
               </ul>
             </li>
           </ul>
@@ -62,14 +47,42 @@
             <div class="form-group">
               <input id="program_selection_field" type="text" class="form-control">
             </div>
-            <button type="submit" class="btn btn-info" onclick="absVal()">Run Selected Program</button>
+            <button id="program_select" type="submit" class="btn btn-info">Run Selected Program</button>
           </form>
         </div><!-- closes .navbar-collapse -->
       </div><!-- closes container div -->
     </nav>
-    <h1 id="program_title" class="text-center"></h1>
-    <h3 id="function_return" class="text-left"></h3>
+    <!-- title of the selected program, as the page title. will appear after user selection -->
+    <h1 class="text-center page_title">JavaScript Programs!</h1>
+    <!-- output of the selected function -->
+    <div class="container">
+      <p id="function_return"></p>
+      <p id="evens_array"></p>
+      <p id="odds_array"></p>
+    </div> <!-- ends container div -->
     <!-- bootstrap js 3.3.7 script -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- absolute value function script -->
+    <script src="js/absolute_value.js"></script>
+    <!-- bigger number function script -->
+    <script src="js/Bigger_number.js"></script>
+    <!-- fizzbuzz function script -->
+    <script src="js/FizzBuzz.js"></script>
+    <!-- grade function script -->
+    <script src="js/Grade.js"></script>
+    <!-- number guess function script -->
+    <script src="js/Number_guess.js"></script>
+    <!-- odd or even function script -->
+    <script src="js/Odd_even.js"></script>
+    <!-- pluralize function script -->
+    <script src="js/Pluralize.js"></script>
+    <!-- link to main.js file -->
+    <script src="js/main.js"></script>
   </body>
 </html>
+
+<!-- TODO:  add this to a static page? button click to run the function, display result using jquery
+ 			      make a static page with a nav and or dropdown so the user can choose which js program to run
+            place function returns on the DOM, and not as alerts or console logs
+            restyle page, maybe create container div to hold function outputs. rounded edges, white backgrounds
+-->

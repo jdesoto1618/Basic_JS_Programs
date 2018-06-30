@@ -1,5 +1,5 @@
-/* general body styles */
-body {
+/* html, body styles */
+html, body {
   font-family: 'Roboto', sans-serif;
   background: #BFD3D3;
 }
@@ -18,4 +18,46 @@ body {
 .form-control {
   height: auto; /* set height to auto, 34 was slightly off from its button */
   border: 1px solid #5bc0de;
+}
+
+/* set styles for function return div */
+.container {
+  /* set position to relative so div doesnt get pushed down */
+  position: relative;
+  width: 60%;
+  height: 350px;
+  background: #fff;
+  border-radius: 10px;
+  margin-top: 65px;
+  /* set up the display as table, so child elements can be vertically centered */
+  display: table;
+}
+
+/* set styles for page title */
+.page_title {
+  /* set position to absolute so this content doesnt push on other content */
+  position: absolute;
+  width: 100%;
+  margin-bottom: 20px;
+  /* set the top position of the page title */
+  top: 45px;
+}
+
+/* set styles for funtion return */
+#function_return,
+#evens_array,
+#odds_array {
+  text-align: center;
+  font-weight: bold;
+  font-size: 25px;
+  /* vertically center content in the container div */
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/* set styles for function output text. this id is generated in js files and isn't in the markup */
+#function_result,
+#evens_array,
+#odds_array {
+  color: #ff9b9b;
 }

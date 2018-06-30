@@ -1,10 +1,16 @@
 function oddEven() {
-  //Function can start by testing 0. By definition, 0 is even. The program only tests the numbers 0 through 15 inclusive for odd or even. That is, if 2 is a factor, it's even. The program will list all the numbers in the range given and display the odd/even status.
-  for (var i=0; i<=15; i++) {
-    if (i%2 === 0) { //even cases
-      console.log(i + " is an even number");
+  // set up two arrays, one for even and the other for odd results
+  var evens = []; odds = [];
+  for (var i = 0; i <= 15; i++) {
+    // even cases
+    if (i % 2 === 0) {
+      evens.push(i);
+    // odd cases
     } else {
-      console.log(i + " is an odd number");
-    }
-  }
-}
+      odds.push(i);
+    } // ends if
+  } // ends for loop
+  // put the output outside the for loop
+  $('#evens_array').html("<span id='function_result'>" + evens + "</span>" + " are the even numbers")
+  $('#odds_array').html("<span id='function_result'>" + odds + "</span>" + " are the odd numbers")
+} // ends oddEven function

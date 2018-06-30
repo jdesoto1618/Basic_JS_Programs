@@ -15,6 +15,8 @@ $(document).ready(function(){
       // if the user selects the absolute value program
       case 'Absolute Value':
       $('.page_title').text('Absolute Value');
+      // show the function return of this program, hide the others
+      $('#function_return').show();
       $('#evens_array, #odds_array').hide();
       // runs absolute value function on button click
       absVal();
@@ -46,6 +48,9 @@ $(document).ready(function(){
 
       case 'Odd or Even?':
       $('.page_title').text('Odd or Even?');
+      // show the function return of this program, hide the others
+      $('#function_return').hide();
+      $('#evens_array, #odds_array').show();
       // runs the fizzBuzz function
       oddEven();
       break;

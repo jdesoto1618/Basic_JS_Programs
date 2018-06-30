@@ -11,6 +11,6 @@ function oddEven() {
     } // ends if
   } // ends for loop
   // put the output outside the for loop
-  $('#evens_array').html("<span id='function_result'>" + evens + "</span>" + " are the even numbers")
-  $('#odds_array').html("<span id='function_result'>" + odds + "</span>" + " are the odd numbers")
+  $('#evens_array').html("<span id='function_result'>" + evens + "</span>" + " are the even numbers in 0-15");
+  $('#odds_array').html("<span id='function_result'>" + odds + "</span>" + " are the odd numbers in 0-15");
 } // ends oddEven function

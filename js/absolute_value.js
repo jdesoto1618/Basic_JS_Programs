@@ -9,25 +9,22 @@ function absVal() {
   while(type === "undefined" || isNaN(number)) {
 		// increment count if the while loop evaluates to true
 		count++
-		// this message returns in the console. to be much more meaningful to the user, it has to show in a window or popup. recall, alert shows the message with only an OK button. confirm shows ok and cancel
-    alert('Use numerical input only, please!');
+		// show this when input type isn't numeric
+    $('#function_return').text('Use numerical input only, please!');
 		// same as when this variable was instantiated. still need to parse it to a number
   	number = parseFloat(prompt('Enter a number to see its absolute value'));
 		// stop the program after count reacher 4
-		if(count == 4) {
-			alert('Tries exceeded! Program terminating');
-			// breaks while loop
+		if(count === 4) {
+			$('#function_return').text('Tries exceeded! Program terminating');
+			// breaks out of while loop
 			break
     } // ends count if
   } // ends while loop
 	// check value of number. this loop gets skipped if number evaluates to NaN
   if(number < 0) {
-		$('#function_return').text('The absolute value of ' + number + ' is ' + (number*-1));
-    // return "The absolute value of " + number + " is " + (number*-1);
+		$('#function_return').html('The absolute value of ' + number + ' is ' + "<span id='function_result'>" + (number * -1) + "</span>");
   } else if(number >= 0) {
-		$('#function_return').text('The absolute value of ' + number + ' is ' + number);
-    // return "The absolute value of " + number + " is " + number;
+		// use html since special color formatting is being inserted using spans. text color is set in css
+		$('#function_return').html('The absolute value of ' + number + ' is ' + "<span id='function_result'>" + number + "</span>");
   } // ends number if
-} // ends absVal
-// TODO: add this to a static page? button click to run the function, display result using jquery
-// 			make a static page with a nav and or dropdown so the user can choose which js program to run
+} // ends absVal function

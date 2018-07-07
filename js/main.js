@@ -1,5 +1,10 @@
 // set the text of the input field to the chosen program from the dropdown
 $(document).ready(function(){
+  // reload the page when the text is clicked
+  $('.navbar_left_title').on('click', function(){
+    // this may not work on all browsers, works ok in chrome
+    location.reload();
+  }); // ends navbar_left_title on click function
   // when the user clicks a list item, save the text of it
   $("#program_select_dropdown").on('click','li', function(){
     // save value of user's dropdown selection to value variable
@@ -14,7 +19,8 @@ $(document).ready(function(){
     switch(usr_selection) {
       // if the user selects the absolute value program
       case 'Absolute Value':
-      $('.page_title').text('Absolute Value');
+      document.title = 'Absolute Value';
+      $('.page_title').text('Absolute Value!');
       // show the function return of this program, hide the others
       $('#function_return').show();
       $('#evens_array, #odds_array').hide();
@@ -23,30 +29,34 @@ $(document).ready(function(){
       break;
 
       case 'Which Number is Larger?':
+      document.title = 'Comparing Two Numbers';
       $('.page_title').text('Which Number is Larger?');
       // runs compareTwoNumbers function on button click
       compareTwoNumbers(num1, num2);
       break;
 
       case 'FizzBuzz':
-      $('.page_title').text('FizzBuzz');
-      // runs the fizzBuzz function
-      fizzBuzz();
+      document.title = 'FizzBuzz';
+      $('.page_title').text('FizzBuzz!');
+      // runs the fuzz function
+      console.log(fuzz(30));
       break;
 
-      case 'Letter Grade':
-      $('.page_title').text('Letter Grade');
-      // runs the fizzBuzz function
-      assignGrade(score);
-      break;
+      // case 'Letter Grade':
+      // $('.page_title').text('Letter Grade!!!');
+      // // runs the fizzBuzz function
+      // assignGrade(score);
+      // break;
 
       case 'Guess a Number':
-      $('.page_title').text('Guess a Number');
+      document.title = 'Guess a Number';
+      $('.page_title').text('Guess a Number!');
       // runs the fizzBuzz function
       secret();
       break;
 
       case 'Odd or Even?':
+      document.title = 'Odd or Even';
       $('.page_title').text('Odd or Even?');
       // show the function return of this program, hide the others
       $('#function_return').hide();
@@ -55,11 +65,11 @@ $(document).ready(function(){
       oddEven();
       break;
 
-      case 'Pluralize Words':
-      $('.page_title').text('Pluralize Words');
-      // runs the fizzBuzz function
-      pluralizer(num, noun);
-      break;
+      // case 'Pluralize Words':
+      // $('.page_title').text('Pluralize Words');
+      // // runs the fizzBuzz function
+      // pluralizer(num, noun);
+      // break;
     } // ends switch
   }); // ends program select on click
 }); // ends document ready function

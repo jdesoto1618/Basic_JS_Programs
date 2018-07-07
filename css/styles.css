@@ -4,6 +4,7 @@ html, body {
   background: #BFD3D3;
 }
 
+/* set styles for left text in navbar */
 .navbar_left_title {
   float: left;
   height: 50px;
@@ -12,6 +13,12 @@ html, body {
   line-height: 20px;
   padding: 15px 15px;
   margin: 0 0 0 -15px; /* remove built in p tag margin, -15 px to bring menu flush against left side */
+  cursor: pointer; /* this is now a page refresh link; set cursor to pointer */
+}
+
+/* set hover styles for left text in navbar */
+.navbar_left_title:hover {
+  text-decoration: underline;
 }
 
 /* set styles for program select button in navbar */

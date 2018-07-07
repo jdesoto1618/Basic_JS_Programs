@@ -3,16 +3,17 @@
   <head>
     <!-- responsive meta tag, sets viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- default characters -->
     <meta charset="utf-8">
     <!-- jQuery 3.3.1 CDN. Note jquery wouldn't run if this script was at the end of the body-->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Latest compiled and minified CSS for bootstrap 3.3.7 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- link to css file -->
-    <link rel="stylesheet" href="css/styles.css">
-    <title>JS Practice Programs</title>
+    <!-- link to css file. two dots means move up one directory and then check css folder -->
+    <link rel="stylesheet" href="../css/styles.css">
     <!-- Roboto font link -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>JavaScript Programs</title>
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -20,6 +21,7 @@
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
+          <!-- this will refresh whatever page the user is on -->
           <p class="navbar_left_title">JavaScript Programs</p>
         </div> <!-- closes navbar-header div -->
 
@@ -36,10 +38,8 @@
                 <li><a href="#">Absolute Value</a></li>
                 <li><a href="#">Which Number is Larger?</a></li>
                 <li><a href="#">FizzBuzz</a></li>
-                <li><a href="#">Letter Grade</a></li>
                 <li><a href="#">Guess a Number</a></li>
                 <li><a href="#">Odd or Even?</a></li>
-                <li><a href="#">Pluralize Words</a></li>
               </ul>
             </li>
           </ul>
@@ -47,42 +47,66 @@
             <div class="form-group">
               <input id="program_selection_field" type="text" class="form-control">
             </div>
-            <button id="program_select" type="submit" class="btn btn-info">Run Selected Program</button>
+            <!-- note about button types: submit tries to actually send the data as part of form submission! this would refresh my page, but only on the first click of this button. any click after WOULDN'T try and refresh... switching the button type to button resolved this -->
+            <button id="program_select" type="button" class="btn btn-info">Run Selected Program</button>
           </form>
         </div><!-- closes .navbar-collapse -->
       </div><!-- closes container div -->
-    </nav>
+    </nav> <!-- ends navbar -->
     <!-- title of the selected program, as the page title. will appear after user selection -->
-    <h1 class="text-center page_title">JavaScript Programs!</h1>
+    <h1 class="text-center page_title">Choose A Program</h1>
     <!-- output of the selected function -->
     <div class="container">
       <p id="function_return"></p>
       <p id="evens_array"></p>
       <p id="odds_array"></p>
     </div> <!-- ends container div -->
+
     <!-- bootstrap js 3.3.7 script -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- absolute value function script -->
-    <script src="js/absolute_value.js"></script>
-    <!-- bigger number function script -->
-    <script src="js/Bigger_number.js"></script>
     <!-- fizzbuzz function script -->
-    <script src="js/FizzBuzz.js"></script>
-    <!-- grade function script -->
-    <script src="js/Grade.js"></script>
+    <script src="../js/FizzBuzz.js"></script>
     <!-- number guess function script -->
-    <script src="js/Number_guess.js"></script>
+    <script src="../js/Number_guess.js"></script>
     <!-- odd or even function script -->
-    <script src="js/Odd_even.js"></script>
-    <!-- pluralize function script -->
-    <script src="js/Pluralize.js"></script>
+    <script src="../js/Odd_even.js"></script>
+    <!-- absolute value function script -->
+    <script src="../js/absolute_value.js"></script>
+    <!-- bigger number function script -->
+    <script src="../js/Bigger_number.js"></script>
     <!-- link to main.js file -->
-    <script src="js/main.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>
 
-<!-- TODO:  add this to a static page? button click to run the function, display result using jquery
- 			      make a static page with a nav and or dropdown so the user can choose which js program to run
-            place function returns on the DOM, and not as alerts or console logs
-            restyle page, maybe create container div to hold function outputs. rounded edges, white backgrounds
+<!-- TODO:
+  add this to a static page? button click to run the function, display result using jquery
+  make a static page with a nav and or dropdown so the user can choose which js program to run
+  place function returns on the DOM, and not as alerts or console logs
+  restyle page, maybe create container div to hold function outputs. rounded edges, white backgrounds
+  create separate but identically styled pages for each program. have links point to new pages
+  now that separate pages are being implemented, change the outputs to reflect this. css, js will need changing
+  need to "import" index.html into the other views, so code isn't reused. here's some code from SO:
+      <script>
+        $(function(){
+          var includes = $('[data-include]');
+          jQuery.each(includes, function(){
+            var file = 'views/' + $(this).data('include') + '.html';
+            $(this).load(file);
+          });
+        });
+      </script>
+    And then to include something in the html:
+
+    <div data-include="header"></div>
+    <div data-include="footer"></div>
+    Which would include the file views/header.html and views/footer.html
+
+  make a Home link to go back to index.html. note! this broke the site by somehow loading index.html twice, but only on the first function ran. removed it from the navbar for now
+  now that li's in navbar are active links to other pages,
+    1. page titles won't be affected by main.js, since the page refreshes
+    2. Run Selected Program button is now invalid. move this into the dom of each program page, and remove from index
+  capture input on the fizzbuzz page, pass that value to fuzz function
+  sanitize data sent to fuzz function
+  now, on first page load when starting new browser instance, page refreshes seemingly on its own after selecting a program and clicking run selected program. confounding this issue, it happens only on the first function that's ran. subsequent clicks work fine.
 -->
